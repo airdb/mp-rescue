@@ -25,30 +25,20 @@ import { computed, defineComponent, PropType, toRefs } from "vue";
 export default defineComponent({
   name: "NavBar",
   data() {
-    /**
-     * [{"id":5,"name":"流浪乞讨"},
-     * {"id":4,"name":"其他寻人"},
-     * {"id":3,"name":"海外寻亲"},
-     * {"id":2,"name":"宝贝寻家"},
-     * {"id":1,"name":"家寻宝贝"}]
-     */
     return {
       tabList: [
-        {
-          label: "家寻",
-          key: 1,
-        },
-        { label: "寻家", key: 2 },
-        { label: "其他", key: 4 },
+        { label: "重大灾害", key: 1 },
+        { label: "紧急求助", key: 2 },
+        { label: "日常求助", key: 4 },
       ],
-      activeKey: 1
+      activeKey: 1,
     };
   },
   methods: {
     tabChang(activeKey) {
       this.activeKey = activeKey;
       this.$emit("change", activeKey);
-    }
+    },
   },
 });
 </script>
@@ -67,7 +57,7 @@ export default defineComponent({
     background: #fff;
     justify-content: space-around;
     width: 100%;
-    padding:16rpx 0px;
+    padding: 16rpx 0px;
     .item {
       font-size: 32rpx;
       text-align: center;
